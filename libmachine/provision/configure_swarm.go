@@ -140,10 +140,6 @@ func configureSwarm(p Provisioner, swarmOptions swarm.Options, authOptions auth.
 			swarmWorkerConfig.Cmd = append([]string{"--experimental"}, swarmWorkerConfig.Cmd...)
 		}
 
-		err = mcndockerclient.CreateContainer(dockerHost, swarmWorkerConfig, "swarm-agent")
-		if err != nil {
-			return err
-		}
 	}
 	return nil
 }
